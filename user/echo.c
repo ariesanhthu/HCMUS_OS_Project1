@@ -13,7 +13,7 @@ main(int argc, char *argv[])
       write(1, " ", 1);
     } else {
       write(1, "\n", 1);
-    }wr
+    }
   }
   exit(0);
 }
