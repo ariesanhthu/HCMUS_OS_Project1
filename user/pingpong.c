@@ -4,12 +4,9 @@
 
 int main(int argc, char *args[])
 {
-    // array of 2 int for the pipe with 2 ends
-    // p[0] for reading
-    // p[1] for writing
+    // p[0]: reading
+    // p[1]: writing
     int p[2]; 
-
-
     char buffer[10];
 
     // create a pipe
@@ -19,7 +16,8 @@ int main(int argc, char *args[])
     int pid;
     pid = fork(); 
 
-    if (pid == 0) //child 
+    //Tien trinh con 
+    if (pid == 0) 
     {
 
         read(p[0], buffer, 1);
@@ -28,19 +26,23 @@ int main(int argc, char *args[])
         write(p[1], buffer, 1);
         close(p[1]);
     } 
-    else if (pid > 0) // parent 
+    // Tien trinh cha 
+    else if (pid > 0) 
     {
+        // Ghi buffer
         write(p[1], buffer, 1);
         close(p[1]);
+      
         wait(0);
+
+        // Doc buffer
         read(p[0], buffer, 1);
+      
         printf("%d: received pong\n", getpid());
         close(p[0]);        
     }
     else
-    {
         printf("\nError!");
-    }
 
     exit(0);
 }
