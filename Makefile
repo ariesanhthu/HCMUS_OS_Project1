@@ -196,6 +196,10 @@ UPROGS=\
 	$U/_zombie\
 	$U/_xargs\
 	$U/_xarg\
+	$U/_sleep\
+	$U/_pingpong\
+	$U/_primes\
+
 
 ifeq ($(LAB),syscall)
 UPROGS += \
