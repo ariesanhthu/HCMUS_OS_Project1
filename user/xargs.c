@@ -3,7 +3,7 @@
 
 #include "user/user.h"
 
-#define CHUNK_SIZE 3
+#define CHUNK_SIZE 32
 
 int main (int argc, char * argv[]){
     if (argc < 2) {

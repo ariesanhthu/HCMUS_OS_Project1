@@ -3,7 +3,7 @@
 #include "user/user.h"
 #include "kernel/param.h" //MAXARG
 
-#define CHUNK_SIZE 512
+#define CHUNK_SIZE 32
 
 int main (int argc, char * argv[]){
     if (argc < 2) {
